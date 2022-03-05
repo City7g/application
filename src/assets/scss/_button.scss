@@ -1,0 +1,39 @@
+.main-btn {
+  padding: 10px 15px;
+
+  font-size: 16px;
+  line-height: 21px;
+
+  border-radius: $radius;
+  border: 1px solid $black;
+  background: $black;
+  color: $white;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 767px) {
+    padding: 6px 12px;
+  }
+}
+
+.secondary-btn {
+  padding: 10px 15px;
+
+  font-size: 16px;
+  line-height: 21px;
+
+  border-radius: $radius;
+  border: 1px solid $black;
+  background: $white;
+  color: $black;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 767px) {
+    padding: 6px 12px;
+  }
+}

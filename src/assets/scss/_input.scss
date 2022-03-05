@@ -1,0 +1,17 @@
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  padding: 10px 15px;
+  margin-bottom: 10px;
+
+  border-radius: $radius;
+  border: 1px solid $black;
+
+  &:focus {
+    outline: 2px solid red;
+  }
+
+  @media (max-width: 767px) {
+    padding: 8px 12px;
+  }
+}
