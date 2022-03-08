@@ -22,6 +22,16 @@ const routes = [
     name: 'register',
     component: () => import('../views/Register.vue'),
   },
+  {
+    path: '/football',
+    name: 'football',
+    component: () => import('../views/Football/Home.vue'),
+  },
+  {
+    path: '/football/:country',
+    name: 'football-country',
+    component: () => import('../views/Football/Country.vue'),
+  },
 ]
 
 const router = createRouter({

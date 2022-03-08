@@ -29,6 +29,16 @@ export default {
   display: flex;
   flex-direction: column;
 
-  background-color: #fff;
+  max-width: 400px;
+  margin: 0 auto;
+
+  background-color: $white;
+  transition: 0.3s background-color ease;
+
+  & p {
+    margin-top: 5px;
+    
+    color: $error;
+  }
 }
 </style>

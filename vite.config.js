@@ -5,13 +5,13 @@ import vue from '@vitejs/plugin-vue'
 export default defineConfig({
   plugins: [vue()],
   server: {
-    port: 3000,
+    port: 8080,
     host: true
   },
   css: {
     preprocessorOptions: {
       scss: {
-        additionalData: `@import "./src/assets//scss/_variables.scss";`
+        additionalData: `@import "./src/assets/scss/_variables.scss";`
       }
     }
   }

@@ -1,8 +1,9 @@
 <template>
   <form @submit.prevent="submit" class="main-form" novalidate>
-    <input type="email" name="email" v-model="email" placeholder="E-mail" />
-    <input type="password" name="password" v-model="password" placeholder="Password" />
+    <input type="email" name="email" v-model="email.value" placeholder="E-mail" :class="{error: email.error}" @focus="email.error = false" />
+    <input type="password" name="password" v-model="password.value" placeholder="Password" :class="{error: password.error}" @focus="password.error = false" />
     <button class="main-btn">Login</button>
+    <p v-if="error">{{ error }}</p>
   </form>
 </template>
 
@@ -10,13 +11,33 @@
 export default {
   data() {
     return {
-      email: null,
-      password: null
+      email: {
+        value: null,
+        error: false
+      },
+      password: {
+        value: null,
+        error: false
+      },
+
+      error: null
     }
   },
   methods: {
     submit() {
-      this.$router.push({name: 'home'})
+      if(!this.email.value) {
+        this.email.error = true
+        return
+      }
+      if(!this.password.value) {
+        this.password.error = true
+        return
+      }
+      if (this.email.value === 'City7gor@gmail.com' && this.password.value === '2010dimaD') {
+        this.$router.push({ name: 'home' })
+      } else {
+        this.error = 'Email or password is wrong'
+      }
     }
   }
 }
@@ -27,6 +48,16 @@ export default {
   display: flex;
   flex-direction: column;
 
-  background-color: #fff;
+  max-width: 400px;
+  margin: 0 auto;
+
+  background-color: $white;
+  transition: 0.3s background-color ease;
+
+  & p {
+    margin-top: 5px;
+    
+    color: $error;
+  }
 }
 </style>
